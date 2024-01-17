@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class exercise_2 {
     public static void main(String[] args) {
-        Scanner scanN = new Scanner(System.in);
+        Scanner scanN = new Scanner(System.in), scanP = new Scanner(System.in);
         double[] prices = new double[15];
         boolean[][] seats = new boolean[30][15];
         int sold = 0;
@@ -28,21 +28,18 @@ public class exercise_2 {
                 System.out.println();
             }
 
-            int k = -1, l = -1;
-            while (scanN.hasNext()) {
-                var n = scanN.next();
-                try {
-                    if (k == -1) {
+            int k, l;
+            String n;
+            while (true) {
+                n = scanP.nextLine();
+                int i = 0;
+
+                if {
                         k = Integer.parseInt(n);
-                    } else if (l == -1) {
                         l = Integer.parseInt(n);
                         seats[k][l] = true;
-                        k = -1;
-                        l = -1;
                         sold++;
-                    }
 
-                } catch (NumberFormatException e) {
                     if (Objects.equals(n, "list")) {
                         System.out.println("Seats sold:  " + sold);
                         System.out.println("Total seats: 450");
@@ -51,7 +48,7 @@ public class exercise_2 {
                     } else if (Objects.equals(n, "revenue")) {
                         System.out.println("Total revenue: " + sold);
                     }
-                }
+
             }
         }
     }
