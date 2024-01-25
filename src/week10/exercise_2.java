@@ -35,10 +35,10 @@ public class exercise_2 {
                 int i = 0;
 
                 if {
-                        k = Integer.parseInt(n);
-                        l = Integer.parseInt(n);
-                        seats[k][l] = true;
-                        sold++;
+                    k = Integer.parseInt(n);
+                    l = Integer.parseInt(n);
+                    seats[k][l] = true;
+                    sold++;
 
                     if (Objects.equals(n, "list")) {
                         System.out.println("Seats sold:  " + sold);
@@ -48,7 +48,7 @@ public class exercise_2 {
                     } else if (Objects.equals(n, "revenue")) {
                         System.out.println("Total revenue: " + sold);
                     }
-
+                }
             }
         }
     }
