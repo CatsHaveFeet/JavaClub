@@ -1,8 +1,9 @@
 package week10;
 
-import java.sql.Array;
 import java.util.Objects;
 import java.util.Scanner;
+
+//test values: 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10
 
 public class exercise_2 {
     public static void main(String[] args) {
@@ -12,7 +13,7 @@ public class exercise_2 {
         int  sold = 0;
         double revenue = 0;
         int nInputs;
-        int k = 0, l = 0;
+        int k, l = 0;
         Boolean[] changes = new Boolean[31];
         for (int i = 1; i < 31; i++) {
             changes[i] = false;
