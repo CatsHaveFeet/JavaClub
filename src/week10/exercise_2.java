@@ -1,14 +1,22 @@
 package week10;
 
+import java.sql.Array;
 import java.util.Objects;
 import java.util.Scanner;
 
 public class exercise_2 {
     public static void main(String[] args) {
         Scanner scanN = new Scanner(System.in), scanP = new Scanner(System.in);
-        double[] prices = new double[15];
-        boolean[][] seats = new boolean[30][15];
-        int sold = 0;
+        double[] prices = new double[16];
+        boolean[][] seats = new boolean[31][16];
+        int  sold = 0;
+        double revenue = 0;
+        int nInputs;
+        int k = 0, l = 0;
+        Boolean[] changes = new Boolean[31];
+        for (int i = 1; i < 31; i++) {
+            changes[i] = false;
+        }
 
         System.out.println("Enter seat pricing: ");
         for (int i = 0; i < 15; i++) {
@@ -16,37 +24,55 @@ public class exercise_2 {
         }
 
         while (true) {
-            for (int i = 0; i < 30; i++) {
-                for (int j = 0; j < 15; j++) {
+            for (int i = 1; i <= 30; i++) {
+                for (int j = 1; j <= 15; j++) {
                     if (seats[i][j]) {
                         System.out.print('*');
-                    }
-                    else {
+                    } else {
                         System.out.print('#');
                     }
+                }
+                if (changes[i]) {
+                    System.out.print(" <--- new change");
                 }
                 System.out.println();
             }
 
-            int k, l;
+            for (int i = 1; i < 31; i++) {
+                changes[i] = false;
+            }
+
             String n;
-            while (true) {
-                n = scanP.nextLine();
-                int i = 0;
+            n = scanP.nextLine();
+            String[] inputs = n.split(" ");
 
-                if {
-                    k = Integer.parseInt(n);
-                    l = Integer.parseInt(n);
-                    seats[k][l] = true;
-                    sold++;
+            nInputs = inputs.length;
 
-                    if (Objects.equals(n, "list")) {
+            for (int i = 0; i < nInputs; i++) {
+                try {
+                    k = Integer.parseInt(inputs[i]);
+                    if (++i < nInputs) {
+                        l = Integer.parseInt(inputs[i]);
+                    }
+                    if (k > 30 || l > 15 || k < 1 || l < 1) {
+                        System.out.println("The numbers that were given seem to be incorrect...");
+                    } else if (seats[k][l]) {
+                        System.out.println("Seat number " + l + " row " + k + " is already taken!");
+                    } else {
+                        seats[k][l] = true;
+                        changes[k] = true;
+                        revenue += prices[k];
+                        sold++;
+                    }
+                } catch (NumberFormatException e) {
+                    if (Objects.equals(inputs[i], "list")) {
                         System.out.println("Seats sold:  " + sold);
-                        System.out.println("Total seats: 450");
-                    } else if (Objects.equals(n, "exit")) {
+                        System.out.println("Vacant seats: " + (450 - sold));
+                    } else if (Objects.equals(inputs[i], "exit")) {
+                        System.out.print("Shutting down...");
                         System.exit(0);
-                    } else if (Objects.equals(n, "revenue")) {
-                        System.out.println("Total revenue: " + sold);
+                    } else if (Objects.equals(inputs[i], "revenue")) {
+                        System.out.println("Total revenue: " + revenue);
                     }
                 }
             }
