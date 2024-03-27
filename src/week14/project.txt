@@ -1,0 +1,128 @@
+QUESTION 1:
+CamelCase :
+    Ask a user to input a sentences and store them in a String variable.
+    Then create a function called CamelCase that accepts String variable as an argument.
+    CamelCase function need to convert the initial/first letters of each word into capital letters and
+    return them to the main function to displays them.
+
+    Example:  we have a sunny weather      Result: We Have A Sunny Weather
+
+
+
+
+
+
+QUESTION 2:
+getPopulation:
+    Create the following arrays in the main function and initialize both of the arrays with 10 values.
+    You can use the following examples as a array name:
+        - countryNames
+        - countryPopulations
+
+    Create another function called populationOfCountries and this function should accept the following arrays as an arguments
+        - 1 String array (countryNames),
+        - 1 int array (countryPopulations),
+        - and 1 String (countryName) (Note: you may create another function for asking the user to input a country name
+            and sent it to the populationOfCounties function as a parameter.)
+
+        If the users' input (country name) is exist in the countryNames array,
+        then populationOfCountries function should return that countries population and display it along with country name
+        If the users' input (country name) is not in the countryNames array,
+        then populationOfCountries function should return -1 and display alongside with country name.
+
+        Example;
+
+            countryNames = {"Romania" ,"Germany" ,"Poland"}
+            countryPopulations = {100000 , 120000 , 130000}
+            str = "Germany"         --> user input
+            return 120000           --> populationOfCountries functions' return value
+
+
+
+
+
+
+
+QUESTION 3:
+SumOfSquare:
+    Create the following functions:
+        - getSumOfSquares that accepts one integer parameter at a time   getSumOfSquares(int num){...}
+        - sumSquare that accepts 2 int parameters as following example:  sumSquare(int a, int b){...};
+
+    Assume the user enters 5 and 3,
+        - getSumOfSquares function calculate the sum of 1+2+3+4+5 and 1+2+3 and
+         returns square of these values to the sumSquare function.
+         Then, sumSquare function adds both values sum of squares and returns to the main function to display
+
+
+Example:
+
+    int a = 5;    sqr 225
+    int b = 3;    sqr 36
+    sumSquares = 261
+
+
+
+
+
+
+QUESTION 4:
+ThreeValuesEvenOrOdd:
+    Create the following function:
+        - ThreeValuesEvenOrOdd function accepts an integer array as a parameter
+        - intArray should have 4 integer values that is assigned by random number generator (range: 1-9)
+        - Then ThreeValuesEvenOrOdd function should display TRUE if there are 3 odd/even numbers in the array
+        - If there are no 3 odd/even numbers, then ThreeValuesEvenOrOdd function should display FALSE.
+
+    Example:
+        intArray[1, 3, 4, 5]    ---> TRUE
+        intArray[2, 3, 4, 5]    ---> FALSE
+        intArray[2, 4, 7, 8]    ---> TRUE
+
+
+
+
+
+
+QUESTION 5:
+UpdateRange:
+    Create the following function:
+        - URange function that accepts one integer array and two integer variables as following
+                    URange(int [] arr, int num1, int num2){...}
+        - By using random number generator assign 10 integer numbers to the array that you have created in the main function
+        - Then ask for the user to input two integer values as num1 and num2 in the main function.
+        - Your URange function should check the array elements and if the users' inputs are in the array,
+        then those values must be replaced by -1
+        - After that display all the elements of array before and after the update
+
+        - NOTE: for random number generator you can set the range from 1 - 50;
+
+    Example:
+    int [] arr = {1, 22, 5, 11, 49, 30, 9, 27, 41, 18};
+    int num1 = 11;
+    int num2 = 27;
+
+    Output:     Before replace = [1, 22, 5, 11, 49, 30, 9, 27, 41, 18]
+                After replace  = [1, 22, 5, -1, 49, 30, 9, -1, 41, 18]
+
+
+
+UpdateRange (version 2):
+    Create the following function:
+        - URange function that accepts one integer array and two integer variables as following
+                    URange(int [] arr, int num1, int num2){...}
+        - By using random number generator assign 10 integer numbers to the array that you have created in the main function
+        - Then ask for the user to input two integer values as num1 and num2 in the main function.
+        - Your URange function should check the array elements and assign -1 for those numbers between num1 and num2 range
+        - After that display all the elements of array before and after the update
+
+        - NOTE: for random number generator you can set the range from 1 - 50;
+
+    Example:
+    int [] arr = {1, 22, 5, 11, 49, 30, 9, 27, 41, 18};
+    int num1 = 11;
+    int num2 = 27;
+
+    Output:     Before replace = [1, 22, 5, 11, 49, 30, 9, 27, 41, 18]
+                After replace  = [1, -1, 5, -1, 49, 30, 9, -1, 41, -1]
+
